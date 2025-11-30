@@ -1,0 +1,10 @@
+FROM python:3.12-slim
+WORKDIR /app
+
+RUN python -m pip install --upgrade pip && \
+    python -m pip install --no-cache-dir flask==3.0.3
+
+COPY app.py /app/app.py
+
+EXPOSE 8080
+CMD ["python", "app.py"]
